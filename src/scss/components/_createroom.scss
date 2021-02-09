@@ -1,0 +1,18 @@
+.CreateRoom{
+	display: flex;
+	.btn{
+		margin-left: 10px !important;
+		font-size: 1.2rem !important;
+		padding: 0px 16px !important;
+	}
+	.rightbtn{
+		padding: 0px 28px !important;
+		letter-spacing: 0.1rem;
+	}
+	.sidebar{
+		z-index: -1;
+	}
+	.drawerPaper{
+		width:15%;
+	}
+}
