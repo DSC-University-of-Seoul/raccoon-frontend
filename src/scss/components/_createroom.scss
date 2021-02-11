@@ -1,5 +1,6 @@
 .CreateRoom{
-	display: flex;
+	display:flex;
+	flex-direction: column;
 	.btn{
 		margin-left: 10px !important;
 		font-size: 1.2rem !important;
@@ -9,10 +10,67 @@
 		padding: 0px 28px !important;
 		letter-spacing: 0.1rem;
 	}
-	.sidebar{
+	.drawer{
+		width: 16%;
+		height: 100%;
+		flex-shrink: 0;
+		white-space: nowrap;
 		z-index: -1;
 	}
 	.drawerPaper{
-		width:15%;
+		width: inherit;
 	}
+	.main{
+		flex-grow:1;
+		.mainContainer{
+			.inputPaper{
+				background-color: $main-white-main;
+				margin: 4rem 5rem;
+				height: 6.5rem;
+				display: flex;
+				justify-content: center;
+				.inputTitle{
+					width:95%;
+					height: inherit;
+					color: $main-grey-darken4-main;
+					font-size: 3rem;
+				}
+			}
+			.optContainer{
+				display:flex;
+				flex-direction: row;
+				justify-content: center;
+			}
+			.circleDiv{
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 8.6rem;
+				width: 15%;
+				margin: 0 4rem;
+			}
+			.circleText{
+				font-family: Roboto-mono;
+				display: inline-block;
+				font-size: 1.1rem;
+				letter-spacing: 3px;
+				margin-bottom: 5%;
+			}
+			.circle{
+				width:inherit;
+				height: inherit;
+				border-radius: 50%;
+				width:80%;
+				background-color: $main-white-main;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.selectOpt{
+				color: $main-black-main;
+			}
+		}
+	}
+
 }
