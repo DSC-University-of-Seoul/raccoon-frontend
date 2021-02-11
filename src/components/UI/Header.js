@@ -6,13 +6,11 @@ import { AppBar, Toolbar, Typography } from '@material-ui/core';
 // props.right는 bar의 오른쪽에 순서대로 생성됩니다.
 function Header(props) {
 	return (
-		<div className="root">
+		<div className="Header">
 			<AppBar position="static" className="bar">
 				<Toolbar color="inherit">
 					<div className="left">
-						<Typography variant="h4" className="title">
-							RACCOON
-						</Typography>
+						<Typography className="title">RACCOON</Typography>
 						{props.left}
 					</div>
 					<div className="middle"> </div>
