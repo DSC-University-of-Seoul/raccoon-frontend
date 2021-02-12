@@ -15,10 +15,11 @@
 		height: 100%;
 		flex-shrink: 0;
 		white-space: nowrap;
-		z-index: -1;
+		z-index: 1;
 	}
 	.drawerPaper{
 		width: inherit;
+		border-right: .2rem $main-white-main solid !important;
 	}
 	.main{
 		flex-grow:1;
@@ -37,8 +38,10 @@
 				}
 			}
 			.optContainer{
-				display:flex;
-				flex-direction: row;
+				margin: 0 10% 2rem 10%;
+			}
+			.circleItem{
+				display: flex;
 				justify-content: center;
 			}
 			.circleDiv{
@@ -46,9 +49,8 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				height: 8.6rem;
-				width: 15%;
-				margin: 0 4rem;
+				width: 125px;
+				height: 125px;
 			}
 			.circleText{
 				font-family: Roboto-mono;
@@ -56,12 +58,14 @@
 				font-size: 1.1rem;
 				letter-spacing: 3px;
 				margin-bottom: 5%;
+				max-height: 26.4px;
 			}
 			.circle{
 				width:inherit;
 				height: inherit;
 				border-radius: 50%;
-				width:80%;
+				width:95px;
+				height: 90px;
 				background-color: $main-white-main;
 				display: flex;
 				justify-content: center;
@@ -69,6 +73,18 @@
 			}
 			.selectOpt{
 				color: $main-black-main;
+			}
+			.ansItem{
+				padding: 15px;
+			}
+			.ansPaper{
+				padding: 5px;
+				display: flex;
+				align-items: center;
+			}
+			.ansInput{
+				font-size: 2.5rem !important;
+				margin: 10px;
 			}
 		}
 	}
