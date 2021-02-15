@@ -15,6 +15,20 @@ import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
 import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 
 function QuizLayout() {
+	const ans4 = ['ansred', 'ansblue', 'ansyel', 'ansgren'];
+	const ans4list = ans4.map((ans4) => (
+		<Grid item xs={6} className="ansItem">
+			<Paper elevation={0} className={`${'ansPaper'} ${ans4}`}>
+				<StarsIcon className="ansInput" />
+				<InputBase className="ansInput" placeholder="Add Answer" fullWidth />
+				<Checkbox
+					checked={true}
+					icon={<CircleUnchecked className="ansInput" />}
+					checkedIcon={<CircleCheckedFilled className="ansInput" />}
+				/>
+			</Paper>
+		</Grid>
+	));
 	return (
 		<Grid container>
 			<Grid item xs>
@@ -77,68 +91,7 @@ function QuizLayout() {
 						</Grid>
 					</Grid>
 					{/* 정답 설정하기 */}
-					<Grid container>
-						<Grid item xs={6} className="ansItem">
-							<Paper elevation={0} className="ansPaper">
-								<StarsIcon className="ansInput" />
-								<InputBase
-									className="ansInput"
-									placeholder="Add Answer"
-									fullWidth
-								/>
-								<Checkbox
-									checked={true}
-									icon={<CircleUnchecked className="ansInput" />}
-									checkedIcon={<CircleCheckedFilled className="ansInput" />}
-								/>
-							</Paper>
-						</Grid>
-						<Grid item xs={6} className="ansItem">
-							<Paper elevation={0} className="ansPaper">
-								<StarsIcon className="ansInput" />
-								<InputBase
-									className="ansInput"
-									placeholder="Add Answer"
-									fullWidth
-								/>
-								<Checkbox
-									checked={true}
-									icon={<CircleUnchecked className="ansInput" />}
-									checkedIcon={<CircleCheckedFilled className="ansInput" />}
-								/>
-							</Paper>
-						</Grid>
-						<Grid item xs={6} className="ansItem">
-							<Paper elevation={0} className="ansPaper">
-								<StarsIcon className="ansInput" />
-								<InputBase
-									className="ansInput"
-									placeholder="Add Answer"
-									fullWidth
-								/>
-								<Checkbox
-									checked={true}
-									icon={<CircleUnchecked className="ansInput" />}
-									checkedIcon={<CircleCheckedFilled className="ansInput" />}
-								/>
-							</Paper>
-						</Grid>
-						<Grid item xs={6} className="ansItem">
-							<Paper elevation={0} className="ansPaper">
-								<StarsIcon className="ansInput" />
-								<InputBase
-									className="ansInput"
-									placeholder="Add Answer"
-									fullWidth
-								/>
-								<Checkbox
-									checked={true}
-									icon={<CircleUnchecked className="ansInput" />}
-									checkedIcon={<CircleCheckedFilled className="ansInput" />}
-								/>
-							</Paper>
-						</Grid>
-					</Grid>
+					<Grid container>{ans4list}</Grid>
 				</Grid>
 			</Grid>
 		</Grid>

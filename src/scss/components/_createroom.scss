@@ -5,11 +5,21 @@
 		margin-left: 10px !important;
 		font-size: 1.2rem !important;
 		padding: 0px 16px !important;
+		color: $main-white-main;
+	}
+	.btn1{
+		background-color: $accent4-main;
+	}
+	.btn1:hover{
+		background-color: darken($accent4-main,10%);
 	}
 	.rightbtn{
+		margin-left: 10px !important;
+		font-size: 1.2rem !important;
 		padding: 0px 28px !important;
 		letter-spacing: 0.1rem;
 	}
+
 	.drawer{
 		width: 16%;
 		height: 100%;
@@ -21,6 +31,19 @@
 		width: inherit;
 		border-right: .2rem $main-white-main solid !important;
 	}
+	.drawerContainer{
+		display: flex;
+		flex-direction: column;
+	}
+	.drawerItem{
+		padding: 1rem 1rem;
+	}
+	.drawerBtn{
+		width:100%;
+		font-size: 1.1rem;
+		color: $main-white-main;
+	}
+
 	.main{
 		flex-grow:1;
 		.mainContainer{
@@ -76,6 +99,10 @@
 			}
 			.ansItem{
 				padding: 15px;
+				.ansred{ background-color: $accent2-main; }
+				.ansblue{ background-color: $accent4-main; }
+				.ansyel{ background-color: $accent1-main; }
+				.ansgren{ background-color: $accent3-main; }
 			}
 			.ansPaper{
 				padding: 5px;

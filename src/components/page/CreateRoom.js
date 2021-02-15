@@ -1,6 +1,13 @@
 import React from 'react';
 import { Header, CRUI } from '../UI';
-import { Button, Drawer, List, ListItem, Toolbar } from '@material-ui/core';
+import {
+	Button,
+	Drawer,
+	List,
+	ListItem,
+	Toolbar,
+	Grid,
+} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const CreateRoom = () => {
@@ -13,7 +20,6 @@ const CreateRoom = () => {
 		<div className="CreateRoom">
 			{/* Header */}
 			<Header
-				className="header"
 				left={
 					<Button variant="contained" color="primary" className="btn">
 						Settings
@@ -24,17 +30,13 @@ const CreateRoom = () => {
 						<Button
 							variant="contained"
 							color="default"
-							className={`${'btn'} ${'rightbtn'}`}
+							className="rightbtn"
 							component={Link}
 							to="/list"
 						>
 							EXIT
 						</Button>
-						<Button
-							variant="contained"
-							color="secondary"
-							className={`${'btn'} ${'rightbtn'}`}
-						>
+						<Button variant="contained" className={`${'btn1'} ${'rightbtn'}`}>
 							DONE
 						</Button>
 					</>
@@ -49,8 +51,14 @@ const CreateRoom = () => {
 				}}
 			>
 				<Toolbar />
-				{list()}
-				<Button variant="contained">Add question</Button>
+				<Grid container className="drawerContainer">
+					{list()}
+					<Grid item className="drawerItem">
+						<Button className="drawerBtn" color="primary" variant="contained">
+							Add question
+						</Button>
+					</Grid>
+				</Grid>
 			</Drawer>
 			{/* Main */}
 			<div className="main">
