@@ -102,8 +102,11 @@ function TFLayout() {
 	return <div></div>;
 }
 
-function CreateRoomQuiz() {
-	return <QuizLayout />;
+function CreateRoomQuiz(props) {
+	const toggleId = props.toggleId;
+	const quizlist = props.quizlist;
+	if (quizlist[toggleId].sort === 'quiz') return <QuizLayout />;
+	else return <TFLayout />;
 }
 
 export default CreateRoomQuiz;

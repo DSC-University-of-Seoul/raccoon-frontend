@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header, CRUI } from '../UI';
 import {
 	Button,
 	Drawer,
 	List,
 	ListItem,
+	ListItemText,
 	Toolbar,
 	Grid,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const CreateRoom = () => {
-	const list = () => (
-		<List>
-			<ListItem>Hi</ListItem>
-		</List>
-	);
+	const [quizlist, setquizlist] = useState([{ sort: 'quiz' }]);
+	const quizitem = quizlist.map((quizlist, index) => (
+		<ListItem key={index}>
+			<ListItemText primary={index + 1} />
+			<ListItemText primary={quizlist.sort} />
+		</ListItem>
+	));
+	const toggleId = 0;
 	return (
 		<div className="CreateRoom">
 			{/* Header */}
@@ -52,7 +56,7 @@ const CreateRoom = () => {
 			>
 				<Toolbar />
 				<Grid container className="drawerContainer">
-					{list()}
+					<List>{quizitem}</List>
 					<Grid item className="drawerItem">
 						<Button className="drawerBtn" color="primary" variant="contained">
 							Add question
@@ -62,7 +66,7 @@ const CreateRoom = () => {
 			</Drawer>
 			{/* Main */}
 			<div className="main">
-				<CRUI />
+				<CRUI quizlist={quizlist} toggleId={toggleId} />
 			</div>
 		</div>
 	);
