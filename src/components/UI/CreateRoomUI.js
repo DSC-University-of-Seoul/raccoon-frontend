@@ -9,7 +9,6 @@ import {
 	MenuItem,
 	Typography,
 	Checkbox,
-	NativeSelect,
 } from '@material-ui/core';
 import StarsIcon from '@material-ui/icons/Stars';
 import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
@@ -59,7 +58,11 @@ function QuizLayout() {
 								<Typography className="circleText">Time Limit</Typography>
 								<Paper className="circle">
 									<FormControl>
-										<Select className="selectOpt" defaultValue={20}>
+										<Select
+											className="selectOpt"
+											defaultValue={20}
+											classes={{ icon: 'selectIcon' }}
+										>
 											<MenuItem value={20}>20 seconds</MenuItem>
 										</Select>
 									</FormControl>
@@ -71,8 +74,12 @@ function QuizLayout() {
 								<Typography className="circleText">Points</Typography>
 								<Paper className="circle">
 									<FormControl>
-										<Select className="selectOpt" defaultValue={20}>
-											<MenuItem value={20}>20 seconds</MenuItem>
+										<Select
+											className="selectOpt"
+											defaultValue={20}
+											classes={{ icon: 'selectIcon' }}
+										>
+											<MenuItem value={20}>standard</MenuItem>
 										</Select>
 									</FormControl>
 								</Paper>
@@ -83,8 +90,12 @@ function QuizLayout() {
 								<Typography className="circleText">Answer Opt</Typography>
 								<Paper className="circle">
 									<FormControl>
-										<Select className="selectOpt" defaultValue={20}>
-											<MenuItem value={20}>20 seconds</MenuItem>
+										<Select
+											className="selectOpt"
+											defaultValue={20}
+											classes={{ icon: 'selectIcon' }}
+										>
+											<MenuItem value={20}>single</MenuItem>
 										</Select>
 									</FormControl>
 								</Paper>
@@ -106,7 +117,7 @@ function TFLayout() {
 function CreateRoomQuiz(props) {
 	const toggleId = props.toggleId;
 	const quizlist = props.quizlist;
-	if (quizlist[toggleId].sort === 'quiz') return <QuizLayout />;
+	if (quizlist[toggleId].sort === 'Quiz') return <QuizLayout />;
 	else return <TFLayout />;
 }
 

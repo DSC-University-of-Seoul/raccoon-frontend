@@ -6,20 +6,28 @@ import {
 	List,
 	ListItem,
 	ListItemText,
+	ListItemIcon,
 	Toolbar,
 	Grid,
 } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from 'react-router-dom';
 
 const CreateRoom = () => {
-	const [quizlist, setquizlist] = useState([{ sort: 'quiz' }]);
+	const [toggleId, settoggleId] = useState(0);
+	const [quizlist, setquizlist] = useState([
+		{ sort: 'Quiz' },
+		{ sort: 'True or False' },
+	]);
 	const quizitem = quizlist.map((quizlist, index) => (
-		<ListItem key={index}>
+		<ListItem button key={index} onClick={() => settoggleId(index)}>
 			<ListItemText primary={index + 1} />
 			<ListItemText primary={quizlist.sort} />
+			<ListItemIcon>
+				<DeleteIcon />
+			</ListItemIcon>
 		</ListItem>
 	));
-	const toggleId = 0;
 	return (
 		<div className="CreateRoom">
 			{/* Header */}
