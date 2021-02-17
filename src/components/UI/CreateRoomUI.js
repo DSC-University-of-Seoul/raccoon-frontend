@@ -9,6 +9,7 @@ import {
 	MenuItem,
 	Typography,
 	Checkbox,
+	NativeSelect,
 } from '@material-ui/core';
 import StarsIcon from '@material-ui/icons/Stars';
 import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
