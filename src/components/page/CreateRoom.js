@@ -20,7 +20,13 @@ const CreateRoom = () => {
 		{ sort: 'True or False' },
 	]);
 	const quizitem = quizlist.map((quizlist, index) => (
-		<ListItem button key={index} onClick={() => settoggleId(index)}>
+		<ListItem
+			button
+			selected={toggleId === index}
+			classes={{ selected: 'drawerActive' }}
+			key={index}
+			onClick={() => settoggleId(index)}
+		>
 			<ListItemText primary={index + 1} />
 			<ListItemText primary={quizlist.sort} />
 			<ListItemIcon>

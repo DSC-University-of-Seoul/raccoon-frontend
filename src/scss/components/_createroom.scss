@@ -44,6 +44,9 @@
 		color: $main-white-main;
 		letter-spacing: 1.5px;
 	}
+	.drawerActive{
+		background-color: $primary-main !important;
+	}
 
 	.main{
 		flex-grow:1;
