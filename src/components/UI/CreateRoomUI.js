@@ -135,7 +135,7 @@ function TFLayout() {
 					</Grid>
 					{/* 퀴즈 옵션 설정하기 */}
 					<Grid container className="optContainer">
-						<Grid item xs={4} className="circleItem">
+						<Grid item xs={6} className="circleItem">
 							<div className="circleDiv">
 								<Typography className="circleText">Time Limit</Typography>
 								<Paper className="circle">
@@ -151,7 +151,7 @@ function TFLayout() {
 								</Paper>
 							</div>
 						</Grid>
-						<Grid item xs={4} className="circleItem">
+						<Grid item xs={6} className="circleItem">
 							<div className="circleDiv">
 								<Typography className="circleText">Points</Typography>
 								<Paper className="circle">
@@ -169,7 +169,7 @@ function TFLayout() {
 						</Grid>
 					</Grid>
 					{/* 정답 설정하기 */}
-					<Grid container>
+					<Grid container className="ansContainer">
 						<Grid item xs={6} className="ansItem">
 							<Paper elevation={0} className={`${'ansPaper'} ${'ansblue'}`}>
 								<StarsIcon className="ansInput" />

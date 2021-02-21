@@ -66,6 +66,8 @@
 			}
 			.optContainer{
 				margin: 0 10% 2rem 10%;
+				display: flex;
+				justify-content: center;
 			}
 			.circleItem{
 				display: flex;
@@ -103,6 +105,9 @@
 			}
 			.selectIcon{
 				fill: $main-black-main;
+			}
+			.ansContainer{
+				padding-top: 3rem;
 			}
 			.ansItem{
 				padding: 15px;
