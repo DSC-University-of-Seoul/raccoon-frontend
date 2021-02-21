@@ -22,9 +22,10 @@ function QuizLayout() {
 				<StarsIcon className="ansInput" />
 				<InputBase className="ansInput" placeholder="Add Answer" fullWidth />
 				<Checkbox
+					className="ansInputCheck"
 					checked={true}
-					icon={<CircleUnchecked className="ansInput" />}
-					checkedIcon={<CircleCheckedFilled className="ansInput" />}
+					icon={<CircleUnchecked className="ansInputIcon" />}
+					checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 				/>
 			</Paper>
 		</Grid>
@@ -179,9 +180,10 @@ function TFLayout() {
 									fullWidth
 								/>
 								<Checkbox
+									className="ansInputCheck"
 									checked={true}
-									icon={<CircleUnchecked className="ansInput" />}
-									checkedIcon={<CircleCheckedFilled className="ansInput" />}
+									icon={<CircleUnchecked className="ansInputIcon" />}
+									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 								/>
 							</Paper>
 						</Grid>
@@ -194,9 +196,10 @@ function TFLayout() {
 									fullWidth
 								/>
 								<Checkbox
-									checked={true}
-									icon={<CircleUnchecked className="ansInput" />}
-									checkedIcon={<CircleCheckedFilled className="ansInput" />}
+									className="ansInputCheck"
+									checked={false}
+									icon={<CircleUnchecked className="ansInputIcon" />}
+									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 								/>
 							</Paper>
 						</Grid>

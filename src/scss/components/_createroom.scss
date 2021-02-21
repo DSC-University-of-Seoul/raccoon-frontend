@@ -113,7 +113,7 @@
 				padding: 15px;
 				.ansred{ background-color: $accent2-main; }
 				.ansblue{ background-color: $accent4-main; }
-				.ansyel{ background-color: $accent1-main; }
+				.ansyel{ background-color: darken($accent1-main, 1%); }
 				.ansgren{ background-color: $accent3-main; }
 			}
 			.ansPaper{
@@ -124,6 +124,17 @@
 			.ansInput{
 				font-size: 2.5rem !important;
 				margin: 10px;
+			}
+			.ansInputIcon{
+				font-size: 2.5rem !important;
+				margin: 10px;
+				color: #29e785;
+			}
+			.ansInputCheck{
+				color: transparent;
+			}
+			.ansInputCheck:hover{
+				background-color: transparent;
 			}
 		}
 	}
