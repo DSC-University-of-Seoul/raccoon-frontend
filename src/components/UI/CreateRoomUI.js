@@ -14,16 +14,18 @@ import StarsIcon from '@material-ui/icons/Stars';
 import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
 import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 
-function QuizLayout() {
+function QuizLayout(props) {
 	const ans4 = ['ansred', 'ansblue', 'ansyel', 'ansgren'];
-	const ans4list = ans4.map((ans4) => (
+	const ans4list = ans4.map((ans4, index) => (
 		<Grid item xs={6} className="ansItem">
 			<Paper elevation={0} className={`${'ansPaper'} ${ans4}`}>
 				<StarsIcon className="ansInput" />
 				<InputBase className="ansInput" placeholder="Add Answer" fullWidth />
 				<Checkbox
 					className="ansInputCheck"
-					checked={true}
+					value={index}
+					checked={props.ansData[index].checked}
+					onChange={props.handleChange}
 					icon={<CircleUnchecked className="ansInputIcon" />}
 					checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 				/>
@@ -111,7 +113,7 @@ function QuizLayout() {
 	);
 }
 
-function TFLayout() {
+function TFLayout(props) {
 	return (
 		<Grid container>
 			<Grid item xs>
@@ -181,7 +183,7 @@ function TFLayout() {
 								/>
 								<Checkbox
 									className="ansInputCheck"
-									checked={true}
+									checked={props.ansData[0]}
 									icon={<CircleUnchecked className="ansInputIcon" />}
 									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 								/>
@@ -197,7 +199,7 @@ function TFLayout() {
 								/>
 								<Checkbox
 									className="ansInputCheck"
-									checked={false}
+									checked={props.ansData[1]}
 									icon={<CircleUnchecked className="ansInputIcon" />}
 									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 								/>
@@ -213,12 +215,35 @@ function TFLayout() {
 function CreateRoomQuiz(props) {
 	const toggleId = props.toggleId;
 	const quizlist = props.quizlist;
-	// const [ansData, setansData] = useState([
-	// 	{ 0: true, 1: false, 2: false, 3: false },
-	// 	{ 0: true, 1: false },
-	// ]);
-	if (quizlist[toggleId].sort === 'Quiz') return <QuizLayout />;
-	else return <TFLayout />;
+	const defaultansData = [
+		[
+			{ checked: true },
+			{ checked: false },
+			{ checked: false },
+			{ checked: false },
+		],
+		[{ checked: false }, { checked: true }],
+	];
+	const [ansData, setansData] = useState(defaultansData);
+	const handleChange = (e) => {
+		const selected = ansData[toggleId];
+		const data = ansData;
+		setansData([
+			...data.slice(0, toggleId),
+			[
+				...selected.slice(0, e.target.value),
+				{ checked: !selected[e.target.value].checked },
+				...selected.slice(e.target.value, selected.length),
+			],
+			...data.slice(toggleId + 1, data.length),
+		]);
+	};
+	if (quizlist[toggleId].sort === 'Quiz')
+		return (
+			<QuizLayout ansData={ansData[toggleId]} handleChange={handleChange} />
+		);
+	else
+		return <TFLayout ansData={ansData[toggleId]} handleChange={handleChange} />;
 }
 
 export default CreateRoomQuiz;
