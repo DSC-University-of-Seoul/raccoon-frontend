@@ -183,7 +183,9 @@ function TFLayout(props) {
 								/>
 								<Checkbox
 									className="ansInputCheck"
-									checked={props.ansData[0]}
+									value={0}
+									checked={props.ansData[0].checked}
+									onChange={props.handleChange}
 									icon={<CircleUnchecked className="ansInputIcon" />}
 									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 								/>
@@ -199,7 +201,9 @@ function TFLayout(props) {
 								/>
 								<Checkbox
 									className="ansInputCheck"
-									checked={props.ansData[1]}
+									value={1}
+									checked={props.ansData[1].checked}
+									onChange={props.handleChange}
 									icon={<CircleUnchecked className="ansInputIcon" />}
 									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 								/>
