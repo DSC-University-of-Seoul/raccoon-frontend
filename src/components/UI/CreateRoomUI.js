@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	Toolbar,
 	InputBase,
@@ -24,8 +24,8 @@ function QuizLayout(props) {
 				<Checkbox
 					className="ansInputCheck"
 					value={index}
-					checked={props.ansData[index].checked}
-					onChange={props.handleChange}
+					checked={props.ansData.includes(index)}
+					onChange={props.onChangehandler}
 					icon={<CircleUnchecked className="ansInputIcon" />}
 					checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
 				/>
@@ -184,7 +184,7 @@ function TFLayout(props) {
 								<Checkbox
 									className="ansInputCheck"
 									value={0}
-									checked={props.ansData[0].checked}
+									checked={props.ansData.includes(0)}
 									onChange={props.handleChange}
 									icon={<CircleUnchecked className="ansInputIcon" />}
 									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
@@ -202,7 +202,7 @@ function TFLayout(props) {
 								<Checkbox
 									className="ansInputCheck"
 									value={1}
-									checked={props.ansData[1].checked}
+									checked={props.ansData.includes(1)}
 									onChange={props.handleChange}
 									icon={<CircleUnchecked className="ansInputIcon" />}
 									checkedIcon={<CircleCheckedFilled className="ansInputIcon" />}
@@ -219,35 +219,27 @@ function TFLayout(props) {
 function CreateRoomQuiz(props) {
 	const toggleId = props.toggleId;
 	const quizlist = props.quizlist;
-	const defaultansData = [
-		[
-			{ checked: true },
-			{ checked: false },
-			{ checked: false },
-			{ checked: false },
-		],
-		[{ checked: false }, { checked: true }],
-	];
-	const [ansData, setansData] = useState(defaultansData);
-	const handleChange = (e) => {
-		const selected = ansData[toggleId];
-		const data = ansData;
-		setansData([
-			...data.slice(0, toggleId),
-			[
-				...selected.slice(0, e.target.value),
-				{ checked: !selected[e.target.value].checked },
-				...selected.slice(e.target.value, selected.length),
-			],
-			...data.slice(toggleId + 1, data.length),
-		]);
+	const [ansData, setansData] = useState([[], []]);
+	const onChangehandler = (e) => {
+		const idx = Number(e.target.value);
+		const temp = ansData;
+		temp[toggleId].includes(idx)
+			? (temp[toggleId] = temp[toggleId].filter((e) => e !== idx))
+			: temp[toggleId].push(idx);
+		setansData(temp);
+		console.log(ansData);
 	};
 	if (quizlist[toggleId].sort === 'Quiz')
 		return (
-			<QuizLayout ansData={ansData[toggleId]} handleChange={handleChange} />
+			<QuizLayout
+				ansData={ansData[toggleId]}
+				onChangehandler={onChangehandler}
+			/>
 		);
 	else
-		return <TFLayout ansData={ansData[toggleId]} handleChange={handleChange} />;
+		return (
+			<TFLayout ansData={ansData[toggleId]} onChangehandler={onChangehandler} />
+		);
 }
 
 export default CreateRoomQuiz;
