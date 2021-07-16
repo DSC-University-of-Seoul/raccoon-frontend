@@ -1,0 +1,68 @@
+.Rclist{
+	.NavBtn {
+		height: 2.5rem !important;
+	}
+	
+	.createBtn {
+		border: solid 1px $main-white-main;
+		margin-right: 1rem !important;
+		font-size: 1.2rem !important;
+		letter-spacing: 1px;
+		color: $main-white-main;
+	}
+	
+	.mainContainer{
+		display:flex;
+		flex-direction: column;
+	}
+	
+	.mainTitle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.mainText {
+		font-size: 2.5rem !important;
+		letter-spacing: 0.8rem;
+		color: $main-white-main;
+	}
+	
+	.subTitle {
+		padding-left: 5% !important;
+		letter-spacing: 0.2rem;
+		display: flex;
+		align-items: center;
+		color: $main-white-main;
+		.cardItem {
+			padding-right: 5% !important;
+			margin-top: 1rem !important;
+			.Card {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 20vh !important;
+				border: 2px solid $main-white-main;
+				border-radius: 20px;
+				color: $main-white-main;
+			}
+		}
+	}
+	
+	.subText {
+		font-size: 2rem !important;
+	}
+	
+	.subText2 {
+		font-size: 1.5rem !important;
+	}
+
+	.smallText {
+		color: $accent1-main;
+		text-decoration: underline !important;
+		font-family: RobotoMono;
+		font-size: 0.8rem !important;
+		margin-left: 0.3rem;
+		letter-spacing: 0.1rem;
+	}
+}

@@ -1,0 +1,40 @@
+.dialogPin {
+	.backdrop {
+		opacity: 0 !important;
+	}
+	.paper {
+		background-color: $primary-main !important;
+		color: $main-white-main !important;
+		border: medium solid $main-white-main !important;
+		border-radius: 30px !important;
+		font-size: 3rem !important;
+		padding: 10px;
+	}
+	.title {
+		text-align: center;
+	}
+	.content {
+		padding-left: 50px;
+		padding-right: 50px;
+		.field {
+			padding-top: 0.1em;
+			.label {
+				color: $main-white-main;
+				font-size: 0.5em;
+			}
+			.input {
+				background-color: $main-white-main;
+				color: $main-white-contrastText;
+				font-size: 0.75em;
+			}
+		}
+	}
+	.actions {
+		padding-left: 50px;
+		padding-right: 50px;
+		.button {
+			background-color: $accent1-main;
+			color: $accent1-contrastText;
+		}
+	}
+}

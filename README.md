@@ -30,13 +30,13 @@
 ```js
 import Main from './components/page/Main';
 import CreateRoom from './components/page/CreateRoom';
-import EnterRoom from './components/page/EnterRoom';
+import Play from './components/page/Play';
 ```
 
 <center><h2>▼</h2></center></br>
 
 ```js
-import { Main, CreateRoom, EnterRoom } from './components/page';
+import { Main, CreateRoom, Play } from './components/page';
 ```
 
     1. 각 폴더마다, 생성할 때마다 index.js 를 생성

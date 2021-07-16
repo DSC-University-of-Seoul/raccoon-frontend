@@ -1,0 +1,142 @@
+.CreateRoom{
+	display:flex;
+	flex-direction: column;
+	.btn{
+		margin-left: 10px !important;
+		font-size: 1.2rem !important;
+		padding: 0px 16px !important;
+		color: $main-white-main;
+	}
+	.btn1{
+		background-color: $accent4-main;
+	}
+	.btn1:hover{
+		background-color: darken($accent4-main,10%);
+	}
+	.rightbtn{
+		margin-left: 10px !important;
+		font-size: 1.2rem !important;
+		padding: 0px 28px !important;
+		letter-spacing: 0.1rem;
+	}
+
+	.drawer{
+		width: 16%;
+		height: 100%;
+		flex-shrink: 0;
+		white-space: nowrap;
+		z-index: 1;
+	}
+	.drawerPaper{
+		width: inherit;
+		border-right: .2rem $main-white-main solid !important;
+	}
+	.drawerContainer{
+		display: flex;
+		flex-direction: column;
+	}
+	.drawerItem{
+		padding: 1rem 1rem;
+	}
+	.drawerBtn{
+		width:100%;
+		font-size: 1.1rem;
+		color: $main-white-main;
+		letter-spacing: 1.5px;
+	}
+	.drawerActive{
+		background-color: $primary-main !important;
+	}
+
+	.main{
+		flex-grow:1;
+		.mainContainer{
+			.inputPaper{
+				background-color: $main-white-main;
+				margin: 4rem 5rem;
+				height: 6.5rem;
+				display: flex;
+				justify-content: center;
+				.inputTitle{
+					width:95%;
+					height: inherit;
+					color: $main-grey-darken4-main;
+					font-size: 3rem;
+				}
+			}
+			.optContainer{
+				margin: 0 10% 2rem 10%;
+				display: flex;
+				justify-content: center;
+			}
+			.circleItem{
+				display: flex;
+				justify-content: center;
+			}
+			.circleDiv{
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 125px;
+				height: 125px;
+			}
+			.circleText{
+				font-family: Roboto-mono;
+				display: inline-block;
+				font-size: 1.1rem;
+				letter-spacing: 3px;
+				margin-bottom: 5%;
+				max-height: 26.4px;
+			}
+			.circle{
+				width:inherit;
+				height: inherit;
+				border-radius: 50%;
+				width:95px;
+				height: 90px;
+				background-color: $main-white-main;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.selectOpt{
+				color: $main-black-main;
+			}
+			.selectIcon{
+				fill: $main-black-main;
+			}
+			.ansContainer{
+				padding-top: 3rem;
+			}
+			.ansItem{
+				padding: 15px;
+				.ansred{ background-color: $accent2-main; }
+				.ansblue{ background-color: $accent4-main; }
+				.ansyel{ background-color: darken($accent1-main, 1%); }
+				.ansgren{ background-color: $accent3-main; }
+			}
+			.ansPaper{
+				padding: 5px;
+				display: flex;
+				align-items: center;
+			}
+			.ansInput{
+				font-size: 2.5rem !important;
+				margin: 10px;
+			}
+			.ansInputIcon{
+				font-size: 2.5rem !important;
+				margin: 10px;
+				color: #29e785;
+			}
+			.ansInputCheck{
+				color: transparent;
+			}
+			.ansInputCheck:hover{
+				background-color: transparent;
+			}
+		}
+	}
+
+}

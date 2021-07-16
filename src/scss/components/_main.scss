@@ -1,8 +1,31 @@
 .main {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	.main-button {
-		font-size: 1.3rem;
+	flex-direction: column;
+	height: 100%;
+	.buttons {
+		flex: 1;
+		max-width: 100%;
+		margin: auto auto;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		.button {
+			width: 4em;
+			height: 22.5vh;
+			border: medium solid $main-white-main;
+			border-radius: 30px;
+			font-size: 3rem;
+			letter-spacing: 3pt;
+		}
+		.createButton {
+			@extend .button;
+			background-color: $primary-main;
+			color: $primary-contrastText;
+		}
+		.playButton {
+			@extend .button;
+			background-color: $accent1-main;
+			color: $accent1-contrastText;
+		}
 	}
 }

@@ -1,0 +1,23 @@
+.Header {
+	z-index: 1201;
+		.bar {
+			background-color: $main-black-main !important; // 색상 팔레트 만들어지면 변경해주세요!
+			box-shadow: none !important;
+			border-bottom: .15rem solid $main-white-main !important; // 색상 팔레트 만들어지면 변경해주세요!
+		}
+		.left {
+			display: flex;
+			flex-grow: 1;
+			align-items: center !important;
+		}
+		.middle {
+			flex-grow: 1;
+		}
+		.title {
+			margin-right: 0.5rem !important;
+			letter-spacing: .3rem;
+			display: inline-block;
+			font-size: 3rem !important;
+			color: $main-white-main;
+		}
+}

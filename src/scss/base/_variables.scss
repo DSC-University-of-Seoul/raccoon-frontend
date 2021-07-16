@@ -1,3 +1,33 @@
 //사용할 색이나 폰트 사이즈 등 변수로 저장하는 부분
 $grey: #9e9b9a;
 $light-grey: #e5e5e5;
+$main-white-main: #fcfcfc;
+$main-white-contrastText: #18161c; // main.black.main
+$main-grey-darken1-main: #c9c8ca;
+$main-grey-darken1-contrastText: #18161c; // main.black.main
+$main-grey-darken2-main: #98979a;
+$main-grey-darken2-contrastText: #18161c; // main.black.main
+$main-grey-darken3-main: #69686c;
+$main-grey-darken3-contrastText: #fcfcfc; // main.white.main
+$main-grey-darken4-main: #3e3d42;
+$main-grey-darken4-contrastText: #fcfcfc; // main.white.main
+$main-black-main: #18161c;
+$main-black-contrastText: #fcfcfc; // main.white.main
+$primary-main: #8917ce;
+$primary-lighten1: #b66fdf;
+$primary-lighten2: #dbb6ee;
+$primary-darken1: #62208d;
+$primary-darken2: #3c1e51;
+$primary-contrastText: #ffe600; // accent1.main
+$accent1-main: #ffe600;
+$accent1-lighten1: #fff099;
+$accent1-contrastText: #8917ce; // primary.main
+$accent2-main: #d76258;
+$accent2-lighten1: #f1b0a7;
+$accent2-contrastText: #fcfcfc; // main.black.main
+$accent3-main: #358f60;
+$accent3-lighten1: #9cc5ab;
+$accent3-contrastText: #fcfcfc; // main.black.main
+$accent4-main: #2c76b1;
+$accent4-lighten1: #9eb6d7;
+$accent4-contrastText: #fcfcfc; // main.black.main
